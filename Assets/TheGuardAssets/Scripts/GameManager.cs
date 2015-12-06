@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
+	public enum GameStatus{Exploring, Inventory}
+
+	//keep public
+	public GameStatus gameStatus = GameStatus.Exploring;
 
 	// Use this for initialization
 	void Start () {
