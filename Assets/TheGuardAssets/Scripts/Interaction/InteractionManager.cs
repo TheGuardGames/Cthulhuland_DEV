@@ -9,4 +9,14 @@ public class InteractionManager : MonoBehaviour {
 
 
 
+
+
+	//public to be called from other scripts
+	public bool A_IsItemPointed(){
+		if (currentlyPointedAgent != null)
+			return true;
+
+		return false;
+	}
+
 }

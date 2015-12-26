@@ -59,7 +59,14 @@ public class InteractorTool : MonoBehaviour {
 	}
 	
 	
-	
+
+
+	//public methods
+	public bool ItemTargeted(){
+		if (currentAgent == null)
+			return false;
+		return true;
+	}
 	
 
 

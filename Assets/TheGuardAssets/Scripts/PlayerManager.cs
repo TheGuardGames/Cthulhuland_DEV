@@ -7,15 +7,16 @@ public class PlayerManager : MonoBehaviour {
 	//set private
 	///references to external
 	public GameManager gameManager;
-
+	public InteractionManager interactionManager;
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
+		interactionManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<InteractionManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 
@@ -26,14 +27,24 @@ public class PlayerManager : MonoBehaviour {
 
 		//GameManager.GameStatus.Exploring
 		switch (gameManager.gameStatus){
-			//if object pointed != then begin interaction
+				
 			case GameManager.GameStatus.Exploring:
-			Debug.Log  ("exploring");
-			break;
+				//if object pointed != then begin interaction
+			if (interactionManager.A_IsItemPointed())
+				Debug.Log ("item pointed, call show menu");
+			else
+				Debug.Log  ("item not pointed. do nothing");
+			
 
-		case GameManager.GameStatus.Inventory:
-			Debug.Log  ("inventory");
-			break;
+					
+
+
+				Debug.Log  ("exploring");
+				break;
+
+			case GameManager.GameStatus.Inventory:
+				Debug.Log  ("inventory");
+				break;
 		}
 
 
