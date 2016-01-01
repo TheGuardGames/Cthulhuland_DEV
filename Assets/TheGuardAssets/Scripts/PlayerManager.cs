@@ -30,8 +30,10 @@ public class PlayerManager : MonoBehaviour {
 				
 			case GameManager.GameStatus.Exploring:
 				//if object pointed != then begin interaction
-			if (interactionManager.A_IsItemPointed())
+			if (interactionManager.A_IsItemPointed()){
+				interactionManager.A_ShowInteractionMenu ();
 				Debug.Log ("item pointed, call show menu");
+			}
 			else
 				Debug.Log  ("item not pointed. do nothing");
 			
