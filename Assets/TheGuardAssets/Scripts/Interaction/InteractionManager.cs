@@ -22,7 +22,7 @@ public class InteractionManager : MonoBehaviour {
 
 	public void A_ShowInteractionMenu(){
 		uiCamera.enabled = true;
-
+		PutMenuInPlace();
 		//
 
 	}
@@ -40,6 +40,16 @@ public class InteractionManager : MonoBehaviour {
 	//*************iINTERNAL SUPPORT
 	private void PutMenuInPlace (){
 		//trazo un rayo desd ela uiCamera
+		RaycastHit hit;
+		Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*100, Color.red,20);
+
+		Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 100);
+
+		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
+
+		} else{
+
+		}
 		//veo dodne colisiona
 		//pongo el menu ahi
 		//corregir la posicion (mejor si no es necesario)
