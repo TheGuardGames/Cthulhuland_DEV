@@ -34,10 +34,6 @@ public class InteractorTool : MonoBehaviour {
 	void Update () {
 		
 		//CheckForActivation();
-		
-		
-		
-		
 		RaycastHit hit;
 		Debug.DrawRay (playerCamera.transform.position, playerCamera.transform.forward*interactionDistance, Color.cyan);
 		
