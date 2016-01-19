@@ -64,7 +64,7 @@ public class InteractionManager : MonoBehaviour {
 		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
 				Debug.Log ("put menu");
 		} else{
-				Debug.Log ("CANT put menu");
+				Debug.Log ("CAN'T put menu");  
 
 		}
 		//veo dodne colisiona
