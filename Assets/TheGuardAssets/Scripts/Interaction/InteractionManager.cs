@@ -41,10 +41,11 @@ public class InteractionManager : MonoBehaviour {
 	private void PutMenuInPlace (){
 		//trazo un rayo desd ela uiCamera
 		RaycastHit hit;
+		/*
 <<<<<<< HEAD
-		Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*10, Color.cyan);
+		//Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*10, Color.cyan);
 
-		Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 10);
+		//Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 10);
 
 		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
 			Debug.Log ("put menu");
@@ -55,15 +56,16 @@ public class InteractionManager : MonoBehaviour {
 			//interactionManager.currentlyPointedAgent = null;
 			//currentAgent = null;//esto sobra, ahora esta en interaction manager
 =======
+*/
 		Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*100, Color.red,20);
 
 		Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 100);
 
 		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
-
+				Debug.Log ("put menu");
 		} else{
+				Debug.Log ("CANT put menu");
 
->>>>>>> origin/Items-system
 		}
 		//veo dodne colisiona
 		//pongo el menu ahi
