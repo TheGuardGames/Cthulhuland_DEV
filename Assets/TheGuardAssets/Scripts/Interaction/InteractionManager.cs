@@ -9,10 +9,11 @@ public class InteractionManager : MonoBehaviour {
 
 	//set private
 	public Camera uiCamera = null;
-
+	public GameObject interactionMenuGO = null;
 
 	public void Start (){	
 		uiCamera = GameObject.FindGameObjectWithTag("MainCamera").transform.FindChild("UI Camera").GetComponent<Camera>();
+		interactionMenuGO = GameObject.FindGameObjectWithTag("WSCanvasHolder").transform.FindChild("CanvasPROTOTYPE1").gameObject;
 		uiCamera.enabled = false;
 	}
 
@@ -41,27 +42,13 @@ public class InteractionManager : MonoBehaviour {
 	private void PutMenuInPlace (){
 		//trazo un rayo desd ela uiCamera
 		RaycastHit hit;
-		/*
-<<<<<<< HEAD
-		//Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*10, Color.cyan);
 
-		//Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 10);
-
-		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
-			Debug.Log ("put menu");
-
-
-		} else{
-			Debug.Log ("CANT put menu");
-			//interactionManager.currentlyPointedAgent = null;
-			//currentAgent = null;//esto sobra, ahora esta en interaction manager
-=======
-*/
 		Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*100, Color.red,20);
 
 		Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 100);
 
 		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
+			interactionMenuGO.transform.position = hit.transform.position;
 				Debug.Log ("put menu");
 		} else{
 				Debug.Log ("CAN'T put menu");  
