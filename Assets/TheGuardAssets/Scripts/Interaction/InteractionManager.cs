@@ -48,10 +48,13 @@ public class InteractionManager : MonoBehaviour {
 		Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 100);
 
 		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
-			interactionMenuGO.transform.position = hit.transform.position;
-				Debug.Log ("put menu");
+			Vector3 newPosition = uiCamera.gameObject.transform.forward * 5;
+			interactionMenuGO.transform.position = newPosition;
+			Debug.Log (newPosition );
+			//Debug.Log (uiCamera.transform.rotation);
+			Debug.Log ("####");
 		} else{
-				Debug.Log ("CAN'T put menu");  
+				//Debug.Log ("CAN'T put menu");  
 
 		}
 		//veo dodne colisiona
