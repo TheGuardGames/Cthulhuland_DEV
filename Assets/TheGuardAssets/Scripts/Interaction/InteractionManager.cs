@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class InteractionManager : MonoBehaviour {
+	//for debug only
+
 
 	//keep public
 	public InteractionAgent currentlyPointedAgent = null;
@@ -45,14 +47,12 @@ public class InteractionManager : MonoBehaviour {
 
 		Debug.DrawRay (uiCamera.transform.position, uiCamera.transform.forward*100, Color.red,20);
 
-		Physics.Raycast (uiCamera.transform.position, uiCamera.transform.forward, out hit, 100);
+		Physics.Raycast (uiCamera.transform.position,     uiCamera.transform.forward    , out hit, 100);
 
 		if (hit.transform != null && hit.transform.tag == "InteractiveByRay"){
-			Vector3 newPosition = uiCamera.gameObject.transform.forward * 5;
+			Vector3 newPosition =  uiCamera.transform.position + uiCamera.gameObject.transform.forward * 5;
 			interactionMenuGO.transform.position = newPosition;
-			Debug.Log (newPosition );
-			//Debug.Log (uiCamera.transform.rotation);
-			Debug.Log ("####");
+			//bloquear controller
 		} else{
 				//Debug.Log ("CAN'T put menu");  
 
